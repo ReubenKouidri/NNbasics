@@ -7,4 +7,4 @@ add_executable(
         basics
         #gate_examples.cpp Perceptron.cpp
         main.cpp MLP.cpp Perceptron.cpp
-)
+        MLP.hpp)
