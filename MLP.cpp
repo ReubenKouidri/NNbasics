@@ -1,10 +1,7 @@
-
-// #include "MLP.hpp"
-
-#include <iostream>
 #include <vector>
 #include <initializer_list>
 #include "Perceptron.hpp"
+// #include "MLP.hpp"
 
 typedef std::vector<std::vector<double>> matrix_t;
 
