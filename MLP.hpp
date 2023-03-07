@@ -1,28 +1,19 @@
+
 #ifndef BASICS_MLP_HPP
 #define BASICS_MLP_HPP
 
 #include <iostream>
 #include <vector>
+#include <initializer_list>
 #include "Perceptron.hpp"
 
 
 class MLP {
-    double lr{};
-    double bias{};
-    std::vector<std::vector<Perceptron>> network;
-    std::vector<std::vector<double>> values;
+    std::vector<Perceptron*> _network;
 public:
-    MLP(size_t _numLayers, double bias = 1.0, double lr = 0.5);
+    MLP(const std::initializer_list<Perceptron*>& il);
 
-    MLP(std::vector<int>&& layers);
-
-    void createLayer(const size_t numNeurons);
-
-    void setWeights(std::vector<std::vector<std::vector<double>>> ws);
-
-    void printWeights();
-
-    std::vector<double> run(std::vector<double> x);
+    [[nodiscard]] double forward(const std::vector<double>& x) const;
 };
 
 #endif //BASICS_MLP_HPP

@@ -3,7 +3,6 @@
 
 #include <vector>
 #include <iostream>
-#include <cmath>
 
 
 struct Perceptron{
@@ -12,7 +11,7 @@ struct Perceptron{
     std::vector<double> _weights {};
     double _bias {};
     double forward(std::vector<double>& input) const;
-    double forward(const std::initializer_list<double>& il);
+    double forward(const std::vector<double>& il) const;
     void setWeights(const std::vector<double>& weights);
 };
 

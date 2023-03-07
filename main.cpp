@@ -1,7 +1,6 @@
 #include <iostream>
 #include <vector>
-#include "Perceptron.hpp"
-#include "MLP.cpp"
+#include "MLP.hpp"
 
 
 int main() {

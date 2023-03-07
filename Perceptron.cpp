@@ -28,16 +28,16 @@ double Perceptron::forward(std::vector<double>& input) const {
     return Perceptron::sigmoid(sum);
 }
 
+double Perceptron::forward(const std::vector<double>& il) const {
+    std::vector<double> v {il.begin(), il.end()};
+    v.emplace_back(_bias);
+    double sum = std::inner_product(_weights.begin(), _weights.end(), v.begin(), (double) 0.0);
+    return Perceptron::sigmoid(sum);
+}
+
 void Perceptron::setWeights(const std::vector<double>& weights){
     if (_weights.size() != weights.size()) {
         throw std::invalid_argument("Input vector size does not match target size");
     }
         _weights = weights;
-}
-
-double Perceptron::forward(const std::initializer_list<double>& il) {
-    std::vector<double> v {il.begin(), il.end()};
-    v.emplace_back(_bias);
-    double sum = std::inner_product(_weights.begin(), _weights.end(), v.begin(), (double) 0.0);
-    return Perceptron::sigmoid(sum);
 }

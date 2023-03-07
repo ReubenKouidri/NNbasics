@@ -3,8 +3,8 @@ project(basics)
 
 set(CMAKE_CXX_STANDARD 20)
 
-add_executable(
-        basics
-        #gate_examples.cpp Perceptron.cpp
-        main.cpp MLP.cpp Perceptron.cpp
-        MLP.hpp)
+add_executable(basics
+        main.cpp
+        MLP.cpp
+        Perceptron.cpp
+        )
